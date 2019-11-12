@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -48,37 +47,13 @@
             </ul>
         </div>
     </header>
-    <div class="webbody">
-      <main>
-        <section class="image">
-          <img src="/images/Products/masadepan.jpg" alt="">
-        </section>
-        <aside class="welcome">
-          <div class="cuadradoa">
-            <div class="cuadradob">
-            <h1>Bienvenidos a nuestra cocina!</h1>
-            <p>
-              Nuestra pasión es cocinar y queremos que nuestros comensales se sientan a gusto.<br>
-              Te invitamos a descubrir nuestras delicias!<br>
-            </p>
-            <button type="" name="button">
-              <a href="#">Haga su Pedido</a>
-            </button>
-            </div>
-          </div>
-        </aside>
-      </main>
-      <div class"separador">
-        <img src="" alt="">
-      </div>
-    </div>
- <!-- Productos destacados -->
-      <!-- <div class="featured">
+     <!-- Productos destacados -->
+      <div class="featured">
         <h1>PRODUCTOS DESTACADOS</h1>
       </div>
       <section class="featured-products"> -->
-        <!-- <h1>PRODUCTOS DESTACADOS</h1> -->
-        <!-- <article class="product">
+        <h1>PRODUCTOS DESTACADOS</h1> -->
+        <article class="product">
           <div class="photo-container">
             <img class="photo" src="img/tortadenuez.jpg" alt="producto 1">
           </div>

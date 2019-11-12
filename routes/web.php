@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/letisbakery", function(){
+  return view("home");
+});
+
+Route::get("/letisbakery/cuentas", function(){
+  return view("cuentas");
+});
+
+Route::get("/letisbakery/contacto", function(){
+  return view("contacto");
+});
+
+Route::get("/letisbakery/lacocina", function(){
+  return view("lacocina");
+});
