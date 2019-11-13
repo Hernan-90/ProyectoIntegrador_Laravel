@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +35,19 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function validator(array $data)
+    {
+      $validate = [
+        'email' => ['required', 'string', 'email', 'max:255', 'exists:usuarios,email'],
+        'password' => ['required', 'string', 'min:8', 'exists:usuarios, password'],
+      ];
+      $message = [
+        'required' => "El campo es obligatorio",
+        'email.exists' => "El mail es incorrecto o no existe",
+        'password.exists' => "La contraseña es incorrecta",
+      ];
+        return Validator::make($data, $validate, $message);
     }
 }

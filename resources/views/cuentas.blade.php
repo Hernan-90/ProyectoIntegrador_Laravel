@@ -1,53 +1,6 @@
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="widht=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/stylesheet.css">
-    <title>Lety's Bakery</title>
-  </head>
-  <body>
-    <header class="">
-        <div class="menu">
-          <ul>
-            <li>
-              <a href="/letisbakery">HOME</a>
-            </li>
-            <li>
-              <a href="/letisbakery/lacocina">LA COCINA</a>
-            </li>
-            <li>
-              <a href="/letisbakery/contacto">CONTACTO</a>
-            </li>
-            <li>
-              <a href="/letisbakery/cuentas">CUENTAS</a>
-            </li>
-            <!-- <li>
-              <a href="#">CHEF's</a>
-            </li> -->
-          </ul>
-        </div>
-        <div class="logo">
-          <a href="/letisbakery">
-            <img src="/images/Products/boceto.png" alt="">
-          </a>
-        </div>
-        <div class="redes">
-            <ul>
-              <li>
-                <a id="tw" href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li>
-                <a id="fb" href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a id="insta" href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-        </div>
-    </header>
+@extends('plantilla')
+
+@section('cuerpo')
     <section class="formularios">
       <div class="login">
         <h1>Iniciar sesión</h1>
@@ -65,16 +18,26 @@
               <div class="input email">
                 <input id="email" type="text" name="email" value="">
               </div>
-                  <div class="form-group">
-                    <label for="password">Contraseña</label>
-                  </div>
-                  <div class="input pass">
-                    <input id="password" type="password" name="password" value="">
-                  </div>
-                  <div class="remember">
-                    <input id="recordarme" type="checkbox" name="recordarme" value="">
-                    <label for="recordarme">Recordarme</label>
-                  </div>
+              <div class="">
+                @error('exists')
+                    <small class="">{{ $message }}</small>
+                @enderror
+              </div>
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+              </div>
+              <div class="input pass">
+                <input id="password" type="password" name="password" value="">
+              </div>
+              <div class="">
+                @error('name')
+                    <small class="">{{ $message }}</small>
+                @enderror
+              </div>
+              <div class="remember">
+                  <input id="recordarme" type="checkbox" name="recordarme" value="">
+                  <label for="recordarme">Recordarme</label>
+              </div>
                   <input type="hidden" name="login" value="">
                   <button class="submit" type="submit" name="button">Iniciar sesión</button>
             </form>
@@ -85,22 +48,23 @@
         <h1>Registro</h1>
         <div class="new">
           <p>¿Ya tienes una cuenta?
-              <a class="inicia" href="cuentas.php"><strong>Inicia sesión</strong></a>
+              <a class="inicia" href="/cuentas"><strong>Inicia sesión</strong></a>
           </p>
         </div>
         <div class="cuadrado3">
           <div class="cuadrado4">
-            <form class="reg" action="cuentas.php" method="post" enctype="multipart/form-data">
+            <form class="reg" action="register" method="post" enctype="multipart/form-data">
+              @csrf
               <div class="name">
-                <label for="nombre">Nombre</label>
+                <label for="name">Nombre</label>
               </div>
               <div>
-                  <input id="nombre" type="text" name="nombre" value="">
+                  <input id="name" type="text" name="name" value="{{old('name')}}">
               </div>
               <div>
-                <small>
-                  // ACA VA EL ERROR NOMBRE
-                </small>
+                @error('name')
+                    <small class="">{{ $message }}</small>
+                @enderror
               </div>
               <div class="email">
                 <label for="email">Dirección de email</label>
@@ -109,12 +73,12 @@
                 <input id="email" type="email" name="email" value="">
               </div>
               <div>
-                <small>
-                  // ACA VA EL ERROR MAIL
-                </small>
+                @error('email')
+                    <small class="">{{ $message }}</small>
+                @enderror
               </div>
               <div class="phone">
-                <label for="phone">Teléfono  (opcional)</label>
+                <label for="phone">Teléfono (opcional)</label>
               </div>
               <div>
                 <input id="phone" type="phonenumber" name="phone" value="">
@@ -127,9 +91,9 @@
                 <span class="small text-danger"></span>
               </div>
               <div>
-                <small>
-                  // ACA VA EL ERROR AVATAR
-                </small>
+                @error('avatar')
+                    <small class="">{{ $message }}</small>
+                @enderror
               </div>
               <div class="pass">
                 <label for="password">Contraseña</label>
@@ -138,9 +102,9 @@
                 <input id="password" type="password" name="password" value="">
               </div>
               <div>
-                <small>
-                // ACA VA EL ERROR PASS
-                </small>
+                @error('password')
+                    <small class="">{{ $message }}</small>
+                @enderror
               </div>
               <div class="pass2">
                 <label for="confirmation">Confirmar Contraseña</label>
@@ -149,9 +113,9 @@
                 <input id="confirmation" type="password" name="confirmation" value="">
               </div>
               <div>
-                <small>
-                  // ACA VA EL ERROR DE LA CONFIRMACION
-                </small>
+                @error('confirmation')
+                    <small class="">{{ $message }}</small>
+                @enderror
               </div>
               <input type="hidden" name="register" value="">
               <button class="submit" type="submit" name="button">Crear cuenta</button>
@@ -160,10 +124,4 @@
         </div>
       </div>
     </section>
-    <footer class="submenu">
-      <div class="col-12">
-
-      </div>
-    </footer>
-  </body>
-</html>
+@endsection

@@ -11,22 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get("/letisbakery", function(){
-  return view("home");
-});
+Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get("/", "HomeController@index");
 
-Route::get("/letisbakery/cuentas", function(){
-  return view("cuentas");
-});
+Route::get("/cuentas", "CuentasController@index") ;
 
-Route::get("/letisbakery/contacto", function(){
+Route::get("/contacto", function(){
   return view("contacto");
 });
 
-Route::get("/letisbakery/lacocina", function(){
-  return view("lacocina");
-});
+Route::get("/lacocina", "lacocinaController@index");

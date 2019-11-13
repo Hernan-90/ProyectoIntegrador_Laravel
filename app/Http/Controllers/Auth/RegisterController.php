@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -48,11 +48,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+      $validate = [
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'phone' => ["string", "max:255"],
+        'avatar' => ["file", "image"],
+        'password' => ['required', 'string', 'min:8'],
+        'confirmation' => ['required', 'string', 'confirmed'],
+      ];
+      $message = [
+        'required' => "El campo es obligatorio",
+        'min' => "El campo debe tener minimo 8 caracteres",
+        'confirmed' => "La contraseña no es la misma",
+      ];
+        return Validator::make($data, $validate, $message);
     }
 
     /**
@@ -63,10 +72,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      $req = request ();
+      $ruta = $req->file("avatar")->store("public");
+      $nombreArchivo = basename($ruta);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'avatar' => $nombreArchivo;
             'password' => Hash::make($data['password']),
         ]);
-    }
+      }
 }
