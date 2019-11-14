@@ -4,31 +4,30 @@
     <section class="formularios">
       <div class="login">
         <h1>Iniciar sesión</h1>
-        @php var_dump($errors->all())
-        @endphp
+        
         <div class="cuadrado1">
           <div class="cuadrado2">
             <form class="log" action="/login" method="post">
             @csrf
               <div class="form-group">
-                <label for="emailL">Dirección de email</label>
+                <label for="email">Dirección de email</label>
               </div>
               <div class="input email">
-                <input id="emailL" type="text" name="emailL" value="{{old('emailL')}}">
+                <input id="email" type="text" name="email" value="{{old('emailL')}}">
               </div>
               <div class="">
-                @error('emailL')
+                @error('email')
                     <small class="">{{ $message }}</small>
                 @enderror
               </div>
               <div class="form-group">
-                <label for="passwordL">Contraseña</label>
+                <label for="password">Contraseña</label>
               </div>
               <div class="input pass">
-                <input id="passwordL" type="password" name="passwordL" value="">
+                <input id="password" type="password" name="password" value="">
               </div>
               <div class="">
-                @error('passwordL')
+                @error('password')
                     <small class="">{{ $message }}</small>
                 @enderror
               </div>

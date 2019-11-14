@@ -50,7 +50,7 @@ class RegisterController extends Controller
     {
       $validate = [
         'name' => ['required', 'string', 'max:255'],
-        'emailR' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'emailR' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
         'phone' => ["numeric","nullable"],
         'avatar' => ["file", "image", "nullable"],
         'passwordR' => ['required', 'string', 'min:8', 'confirmed'],
@@ -79,10 +79,10 @@ class RegisterController extends Controller
       } else {$nombreArchivo = null;}
         return User::create([
             'name' => $data['name'],
-            'emailR' => $data['emailR'],
+            'email' => $data['emailR'],
             'phone' => $data['phone'],
             'avatar' => $nombreArchivo,
-            'passwordR' => Hash::make($data['passwordR']),
+            'password' => Hash::make($data['passwordR']),
         ]);
     }
 }
