@@ -21,7 +21,17 @@
               <a href="/contacto">CONTACTO</a>
             </li>
             <li>
-              <a href="/cuentas">CUENTAS</a>
+              @if (Auth::user()!== null)
+                <a href="/cuentas" onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                 {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                </form>
+              @else
+                <a href="/cuentas">CUENTAS</a>
+              @endif
             </li>
             <!-- <li>
               <a href="#">CHEF's</a>
@@ -49,7 +59,19 @@
     </header>
     @yield('cuerpo')
     <footer>
-      
+      <div class="redes">
+          <ul>
+            <li>
+              <a id="tw" href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a id="fb" href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a id="insta" href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+      </div>
     </footer>
   </body>
 </html>

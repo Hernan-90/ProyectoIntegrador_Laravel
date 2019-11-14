@@ -48,6 +48,10 @@ header {
   display: flex;
   justify-content: flex-end;
 }
+footer {
+  position: relative;
+  top:150px;
+}
 .redes {
   display: flex;
   justify-content: space-around;

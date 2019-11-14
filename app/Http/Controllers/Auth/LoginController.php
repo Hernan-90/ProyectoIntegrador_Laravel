@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -40,13 +41,11 @@ class LoginController extends Controller
     protected function validator(array $data)
     {
       $validate = [
-        'email' => ['required', 'string', 'email', 'max:255', 'exists:usuarios,email'],
-        'password' => ['required', 'string', 'min:8', 'exists:usuarios, password'],
+        'email' => ['required', 'string', 'email', 'max:255'],
+        'password' => ['required', 'string', 'min:8'],
       ];
       $message = [
         'required' => "El campo es obligatorio",
-        'email.exists' => "El mail es incorrecto o no existe",
-        'password.exists' => "La contraseña es incorrecta",
       ];
         return Validator::make($data, $validate, $message);
     }
