@@ -50,11 +50,11 @@ class RegisterController extends Controller
     {
       $validate = [
         'name' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        'phone' => ["string", "max:255"],
-        'avatar' => ["file", "image"],
-        'password' => ['required', 'string', 'min:8'],
-        'confirmation' => ['required', 'string', 'confirmed'],
+        'emailR' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+        'phone' => ["numeric","nullable"],
+        'avatar' => ["file", "image", "nullable"],
+        'passwordR' => ['required', 'string', 'min:8', 'confirmed'],
+        'passwordR_confirmation' => ['required', 'string'],
       ];
       $message = [
         'required' => "El campo es obligatorio",
@@ -73,14 +73,16 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
       $req = request ();
+      if (isset($data['avatar'])){
       $ruta = $req->file("avatar")->store("public");
       $nombreArchivo = basename($ruta);
+      } else {$nombreArchivo = null;}
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'email' => $data['emailR'],
             'phone' => $data['phone'],
-            'avatar' => $nombreArchivo;
-            'password' => Hash::make($data['password']),
+            'avatar' => $nombreArchivo,
+            'password' => Hash::make($data['passwordR']),
         ]);
-      }
+    }
 }

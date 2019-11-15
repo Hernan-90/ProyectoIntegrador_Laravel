@@ -4,22 +4,19 @@
     <section class="formularios">
       <div class="login">
         <h1>Iniciar sesión</h1>
-        <div class="new">
-            <p>Eres un nuevo usuario?
-              <a class="crear" href="registroproyecto.php"><strong>Crear una cuenta</strong></a>
-            </p>
-        </div>
+        
         <div class="cuadrado1">
           <div class="cuadrado2">
-            <form class="log" action="cuentas.php" method="post">
+            <form class="log" action="/login" method="post">
+            @csrf
               <div class="form-group">
                 <label for="email">Dirección de email</label>
               </div>
               <div class="input email">
-                <input id="email" type="text" name="email" value="">
+                <input id="email" type="text" name="email" value="{{old('emailL')}}">
               </div>
               <div class="">
-                @error('exists')
+                @error('email')
                     <small class="">{{ $message }}</small>
                 @enderror
               </div>
@@ -30,7 +27,7 @@
                 <input id="password" type="password" name="password" value="">
               </div>
               <div class="">
-                @error('name')
+                @error('password')
                     <small class="">{{ $message }}</small>
                 @enderror
               </div>
@@ -38,22 +35,17 @@
                   <input id="recordarme" type="checkbox" name="recordarme" value="">
                   <label for="recordarme">Recordarme</label>
               </div>
-                  <input type="hidden" name="login" value="">
-                  <button class="submit" type="submit" name="button">Iniciar sesión</button>
+              <button class="submit" type="submit" name="button">Iniciar sesión</button>
             </form>
           </div>
         </div>
       </div>
       <div class="register">
         <h1>Registro</h1>
-        <div class="new">
-          <p>¿Ya tienes una cuenta?
-              <a class="inicia" href="/cuentas"><strong>Inicia sesión</strong></a>
-          </p>
-        </div>
+
         <div class="cuadrado3">
           <div class="cuadrado4">
-            <form class="reg" action="register" method="post" enctype="multipart/form-data">
+            <form class="reg" action="/register" method="post" enctype="multipart/form-data">
               @csrf
               <div class="name">
                 <label for="name">Nombre</label>
@@ -70,10 +62,10 @@
                 <label for="email">Dirección de email</label>
               </div>
               <div>
-                <input id="email" type="email" name="email" value="">
+                <input id="email" type="email" name="emailR" value="{{old('emailR')}}">
               </div>
               <div>
-                @error('email')
+                @error('emailR')
                     <small class="">{{ $message }}</small>
                 @enderror
               </div>
@@ -99,21 +91,21 @@
                 <label for="password">Contraseña</label>
               </div>
               <div>
-                <input id="password" type="password" name="password" value="">
+                <input id="password" type="password" name="passwordR" value="">
               </div>
               <div>
-                @error('password')
+                @error('passwordR')
                     <small class="">{{ $message }}</small>
                 @enderror
               </div>
               <div class="pass2">
-                <label for="confirmation">Confirmar Contraseña</label>
+                <label for="password_confirmation">Confirmar Contraseña</label>
               </div>
               <div>
-                <input id="confirmation" type="password" name="confirmation" value="">
+                <input id="confirmation" type="password" name="passwordR_confirmation" value="">
               </div>
               <div>
-                @error('confirmation')
+                @error('passwordR_confirmation')
                     <small class="">{{ $message }}</small>
                 @enderror
               </div>
