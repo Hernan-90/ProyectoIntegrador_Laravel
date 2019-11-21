@@ -48,12 +48,15 @@ header {
 #logout-form {
   display: none;
 }
+/* ACA VA EL FOOTER */
 footer {
   position: relative;
   top:150px;
-}
-.redes {
   display: flex;
+  justify-content: space-around;
+}
+
+.redes {
   justify-content: space-around;
 }
 #tw {

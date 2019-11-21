@@ -15,6 +15,11 @@ class CreateRecetasTable extends Migration
     {
         Schema::create('recetas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('titulo');
+            $table->string('ingredientes');
+            $table->string('materiales');
+            $table->string('preparacion');
+            $table->string('foto_producto');
             $table->timestamps();
         });
     }

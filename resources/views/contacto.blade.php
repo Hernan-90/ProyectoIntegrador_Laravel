@@ -8,13 +8,13 @@
       <a href="#">telefono</a>
       <ul>
         <li>
-          <a href="#"></a>
+          <a href="#">mail</a>
         </li>
         <li>
-          <a href="#"></a>
+          <a href="#">direccion</a>
         </li>
         <li>
-          <a href="#"></a>
+          <a href="#">redes</a>
         </li>
       </ul>
     </section>
