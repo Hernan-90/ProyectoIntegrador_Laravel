@@ -39,12 +39,12 @@ class RecetaController extends Controller
         "titulo" => ['required', 'string', 'max:255'],
         "ingredientes" => ['required', 'string', 'max:255'],
         "materiales" => ['required', 'string', 'max:255'],
-        "preparacion" => ['required', 'string'],
+        "preparacion" => ['required', 'string', 'max:255'],
         "foto_producto" => ["file", "image"],
       ];
 
       $messages = [
-        "required" => "El :attribute no puede estar vacio.";
+        "required" => "El campo :attribute no puede estar vacio."
       ];
 
       $this->validate($req, $rules, $messages); //Si validamos tenemos que mostrar los errores al usuario.
@@ -54,7 +54,7 @@ class RecetaController extends Controller
 
       $receta = new Receta();
 
-      $receta->title = $req['titulo'];
+      $receta->titulo = $req['titulo'];
       $receta->ingredientes = $req['ingredientes'];
       $receta->materiales = $req['materiales'];
       $receta->preparacion = $req['preparacion'];
