@@ -26,3 +26,9 @@ Route::get("/contacto", function(){
 });
 
 Route::get("/lacocina", "lacocinaController@index");
+
+Route::get("/nuevoProducto", "ProductoController@create");
+Route::post("/nuevoProducto", "ProductoController@store");
+
+Route::get("/nuevaReceta", "RecetaController@create");
+Route::post("/nuevaReceta", "RecetaController@store");
