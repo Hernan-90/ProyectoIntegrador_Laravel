@@ -10,7 +10,7 @@
   <body>
     <header class="">
         <div class="menu">
-          <ul>
+          <ul class="nav">
             <li>
               <a href="/">HOME</a>
             </li>
@@ -20,22 +20,6 @@
             <li>
               <a href="/contacto">CONTACTO</a>
             </li>
-            <li>
-              @if (Auth::user()!== null)
-                <a href="/cuentas" onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                 {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                </form>
-              @else
-                <a href="/cuentas">CUENTAS</a>
-              @endif
-            </li>
-            <!-- <li>
-              <a href="#">CHEF's</a>
-            </li> -->
           </ul>
         </div>
         <div class="logo">
@@ -43,16 +27,22 @@
             <img src="/images/Products/boceto.png" alt="">
           </a>
         </div>
-        <div class="redes">
+        <div class="menu_cuentas">
             <ul>
-              <li>
-                <a id="tw" href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li>
-                <a id="fb" href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a id="insta" href="#"><i class="fab fa-instagram"></i></a>
+              <li class="cuentas">
+                @if (Auth::user()!== null)
+                  <a href="/carrito">PERFIL</a>
+                  <a href="/carrito">CARRITO</a>
+                  <a href="/cuentas" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                   {{ __('LOGOUT') }}
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                      @csrf
+                  </form>
+                @else
+                  <a href="/cuentas">LOGIN / REGISTRO</a>
+                @endif
               </li>
             </ul>
         </div>
