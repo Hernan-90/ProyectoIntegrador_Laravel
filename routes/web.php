@@ -27,6 +27,9 @@ Route::get("/contacto", function(){
 
 Route::get("/lacocina", "lacocinaController@index");
 
+Route::get("/carrito", "CarritoController@index");
+Route::get("/historialCompra", "CarritoController@historial"); 
+
 Route::get("/nuevoProducto", "ProductoController@create");
 Route::post("/nuevoProducto", "ProductoController@store");
 

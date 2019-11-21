@@ -31,7 +31,7 @@
             <ul>
               <li class="cuentas">
                 @if (Auth::user()!== null)
-                  <a href="/carrito">PERFIL</a>
+                  <a href="/">PERFIL</a>
                   <a href="/carrito">CARRITO</a>
                   <a href="/cuentas" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
