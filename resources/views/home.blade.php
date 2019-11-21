@@ -15,7 +15,7 @@
               Te invitamos a descubrir nuestras delicias!<br>
             </p>
             <button type="" name="button">
-              <a href="#">Haga su Pedido</a>
+              <a href="/lacocina">Haga su Pedido</a>
             </button>
             </div>
           </div>
