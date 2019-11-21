@@ -5,13 +5,10 @@
 ul,ol{
   list-style-type: none;
   padding: 0;
-  display: flex;
-  flex-direction: row;
 }
 a {
   color: black;
   text-decoration: none;
-  margin-left: 30px;
 }
 body {
   background-color: white;
@@ -23,15 +20,14 @@ header {
   margin: 0 auto;
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   z-index: 90;
 }
-.menu,.redes {
+.menu,.menu_cuentas {
   width: 33.33%;
 }
-.menu {
+.nav{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,16 +40,23 @@ header {
 .logo a {
   margin: 0;
 }
-.menu2 {
+.cuentas {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
 }
+#logout-form {
+  display: none;
+}
+/* ACA VA EL FOOTER */
 footer {
   position: relative;
   top:150px;
-}
-.redes {
   display: flex;
+  justify-content: space-around;
+}
+
+.redes {
   justify-content: space-around;
 }
 #tw {

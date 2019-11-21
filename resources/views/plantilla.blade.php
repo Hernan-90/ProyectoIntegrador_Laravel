@@ -10,7 +10,7 @@
   <body>
     <header class="">
         <div class="menu">
-          <ul>
+          <ul class="nav">
             <li>
               <a href="/">HOME</a>
             </li>
@@ -20,22 +20,6 @@
             <li>
               <a href="/contacto">CONTACTO</a>
             </li>
-            <li>
-              @if (Auth::user()!== null)
-                <a href="/cuentas" onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                 {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                </form>
-              @else
-                <a href="/cuentas">CUENTAS</a>
-              @endif
-            </li>
-            <!-- <li>
-              <a href="#">CHEF's</a>
-            </li> -->
           </ul>
         </div>
         <div class="logo">
@@ -43,23 +27,42 @@
             <img src="/images/Products/boceto.png" alt="">
           </a>
         </div>
-        <div class="redes">
+        <div class="menu_cuentas">
             <ul>
-              <li>
-                <a id="tw" href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li>
-                <a id="fb" href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a id="insta" href="#"><i class="fab fa-instagram"></i></a>
+              <li class="cuentas">
+                @if (Auth::user()!== null)
+                  <a href="/carrito">PERFIL</a>
+                  <a href="/carrito">CARRITO</a>
+                  <a href="/cuentas" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                   {{ __('LOGOUT') }}
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                      @csrf
+                  </form>
+                @else
+                  <a href="/cuentas">LOGIN / REGISTRO</a>
+                @endif
               </li>
             </ul>
         </div>
     </header>
     @yield('cuerpo')
     <footer>
+      <div class="contact_form">
+        <h2>PREGUNTAS?</h2>
+        <form class="" action="/" method="post">
+          <label for="">Nombre</label>
+          <input type="text" name="contact_name" value="">
+          <label for="">Mail</label>
+          <input type="text" name="contact_mail" value="">
+          <label for="">Comentario:</label>
+          <input type="text" name="coment" value="">
+          <button type="submit" name="button">Enviar</button>
+        </form>
+      </div>
       <div class="redes">
+        <h2>REDES y CONTACTO</h2>
           <ul>
             <li>
               <a id="tw" href="#"><i class="fab fa-twitter"></i></a>
@@ -70,8 +73,15 @@
             <li>
               <a id="insta" href="#"><i class="fab fa-instagram"></i></a>
             </li>
+            <li>
+              <a href="#">cuentafalsa@gmail.com</a>
+            </li>
+            <li>
+              <a href="#">cel: 11 1234 5678</a>
+            </li>
           </ul>
       </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26270.199593640067!2d-58.440136068060625!3d-34.60985192797749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5e41da17ff%3A0xebce9fad2698f23f!2sAlmagro%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1574340564290!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </footer>
   </body>
 </html>

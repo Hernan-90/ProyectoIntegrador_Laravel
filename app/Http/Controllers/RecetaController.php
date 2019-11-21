@@ -24,7 +24,7 @@ class RecetaController extends Controller
      */
     public function create()
     {
-        //
+      return view('/nuevaReceta');
     }
 
     /**
@@ -33,9 +33,37 @@ class RecetaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+      $rules = [
+        "titulo" => ['required', 'string', 'max:255'],
+        "ingredientes" => ['required', 'string', 'max:255'],
+        "materiales" => ['required', 'string', 'max:255'],
+        "preparacion" => ['required', 'string'],
+        "foto_producto" => ["file", "image"],
+      ];
+
+      $messages = [
+        "required" => "El :attribute no puede estar vacio.";
+      ];
+
+      $this->validate($req, $rules, $messages); //Si validamos tenemos que mostrar los errores al usuario.
+
+      $ruta = $req->file('foto_producto')->store('public/img');
+      $nombreImg = basename($ruta);
+
+      $receta = new Receta();
+
+      $receta->title = $req['titulo'];
+      $receta->ingredientes = $req['ingredientes'];
+      $receta->materiales = $req['materiales'];
+      $receta->preparacion = $req['preparacion'];
+      $receta->foto_producto = $nombreImg;
+
+      $receta->save();
+
+      return redirect('/');
+
     }
 
     /**
