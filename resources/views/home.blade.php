@@ -24,5 +24,11 @@
       <div class"separador">
         <img src="" alt="">
       </div>
+      <div class="">
+        <a href="/nuevoProducto">Nuevo Producto</a>
+      </div>
+      <div class="">
+        <a href="/nuevoProducto">Nueva Receta</a>
+      </div>
     </div>
 @endsection

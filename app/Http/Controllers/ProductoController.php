@@ -33,41 +33,42 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
 
+
       $rules = [
-      "nombre" => "string|min:1|unique:productos,nombre|required",
-      "precio1" => "integer|min:1|required",
-      "precio2" => "integer|min:1|nullable",
-      "categoria" => "integer|required",
-      "descripcion" => "string|min:1|max:250|required",
-      "destacado" => "smallInt|required",
-      "imagen" => "image|required",
-      "ingredientes" => "string|min:1|required"
+      "nombreproducto" => "required|string|min:1|unique:productos,nombreproducto",
+      "precio1" => "required|integer|min:1",
+      "precio2" => "nullable|integer",
+      "categoria" => "required|integer",
+      "descripcion" => "required|string|min:1|max:250",
+      "destacado" => "required|integer",
+      "imagen" => "required|image",
+      "ingredientes" => "required|string|min:1"
     ];
     $messages = [
       "string" => "El campo :attribute debe ser texto.",
       "min" => "El campo :attribute tiene un minimo de :min”.",
       "max" => "El campo :attribute tiene un máximo de :max",
       "integer" => "El campo :attribute debe ser un numero.",
-      "unique" => "El campo :attribute se encuentra repetido."
+      "unique" => "El campo :attribute se encuentra repetido.",
       "required" => "El campo :attribute debe estar completo."
     ];
 
     $this->validate($req, $rules, $messages);
-    $ruta = $req->file('image')->store('public/images/Products');
+    $ruta = $req->file('imagen')->store('public/images/Products');
     $nombreImg = basename($ruta);
 
     $producto = new Producto();
-    $producto->nombre = $req['nombre'];
-    $producto->precio = $req['precio1'];
-    $producto->precio = $req['precio2'];
+    $producto->nombreproducto = $req['nombreproducto'];
+    $producto->precio1 = $req['precio1'];
+    $producto->precio2 = $req['precio2'];
     $producto->categoria = $req['categoria'];
     $producto->descripcion = $req['descripcion'];
     $producto->destacado = $req['destacado'];
     $producto->ingredientes = $req['ingredientes'];
-    $producto->image = $nombreImg;
+    $producto->imagen = $nombreImg;
     $producto->save();
     return redirect('/');
     }
