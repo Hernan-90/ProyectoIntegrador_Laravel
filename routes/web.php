@@ -27,11 +27,11 @@ Route::get("/contacto", function(){
 
 Route::get("/lacocina", "lacocinaController@index");
 
-Route::get("/carrito", "CarritoController@index");
-Route::get("/historialCompra", "CarritoController@historial"); 
+Route::get("/carrito", "CarritoController@index")->middleware("auth");
+Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");
 
-Route::get("/nuevoProducto", "ProductoController@create");
+Route::get("/nuevoProducto", "ProductoController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevoProducto", "ProductoController@store");
 
-Route::get("/nuevaReceta", "RecetaController@create");
+Route::get("/nuevaReceta", "RecetaController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevaReceta", "RecetaController@store");
