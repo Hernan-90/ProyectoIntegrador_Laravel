@@ -50,14 +50,26 @@ header {
 }
 /* ACA VA EL FOOTER */
 footer {
+  background-color: lightgrey;
   position: relative;
   top:150px;
-  display: flex;
-  justify-content: space-around;
 }
-
+.divisiones{
+  display: flex;
+  align-items: center;
+}
+.contact_form {
+  width:33.33%;
+  display: flex;
+  flex-direction: column;
+}
 .redes {
-  justify-content: space-around;
+  width:33.33%;
+  display: flex;
+  flex-direction: column;
+}
+.iconos_redes{
+  display: flex;
 }
 #tw {
   padding: 10px;
@@ -73,6 +85,14 @@ footer {
   padding: 10px 12px;
   border: 1px solid black;
   border-radius: 90px;
+}
+.map{
+  width:33.33%;
+}
+.legales {
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 /* ACA VA LA SECCION PARA NAVEGAR */
 .webbody {
