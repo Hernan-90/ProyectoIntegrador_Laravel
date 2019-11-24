@@ -33,7 +33,7 @@
 </div>
 <div class="">
   <label for="">Categoria</label>
-  <input type="number" name="categoria" value="">
+  <input type="number" name="categoria_id" value="">
 </div>
 <div class="">
   @error('categoria')
