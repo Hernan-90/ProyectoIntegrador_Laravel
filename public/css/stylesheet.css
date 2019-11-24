@@ -52,7 +52,7 @@ header {
 footer {
   background-color: lightgrey;
   position: relative;
-  top:150px;
+  top:124px;
 }
 .divisiones{
   display: flex;
@@ -97,7 +97,7 @@ footer {
 /* ACA VA LA SECCION PARA NAVEGAR */
 .webbody {
 position: relative;
-top: 124px;
+top: 120px;
 }
 main {
   width: 100%;

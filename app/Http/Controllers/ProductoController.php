@@ -35,8 +35,6 @@ class ProductoController extends Controller
      */
     public function store(Request $req)
     {
-
-
       $rules = [
       "nombreproducto" => "required|string|min:1|unique:productos,nombreproducto",
       "precio1" => "required|integer|min:1",
@@ -57,7 +55,7 @@ class ProductoController extends Controller
     ];
 
     $this->validate($req, $rules, $messages);
-    $ruta = $req->file('imagen')->store('public/images/Products');
+    $ruta = $req->file('imagen')->store('public/productos');
     $nombreImg = basename($ruta);
 
     $producto = new Producto();
@@ -81,7 +79,8 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        $productoDetalle = Producto::find($producto->id);
+        return view("lacocina", compact('productoDetalle'));
     }
 
     /**

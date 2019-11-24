@@ -49,7 +49,7 @@ class RecetaController extends Controller
 
       $this->validate($req, $rules, $messages); //Si validamos tenemos que mostrar los errores al usuario.
 
-      $ruta = $req->file('foto_producto')->store('public/images/Recetas');
+      $ruta = $req->file('foto_producto')->store('public/recetas');
       $nombreImg = basename($ruta);
 
       $receta = new Receta();
