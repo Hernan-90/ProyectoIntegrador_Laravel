@@ -18,7 +18,11 @@
               <a href="/lacocina">LA COCINA</a>
             </li>
             <li>
-              <a href="/contacto">CONTACTO</a>
+              @auth
+                <a href="/recetas">RECETAS</a>
+              @else
+                <a href="/contacto">NOSOTROS</a>
+              @endauth
             </li>
           </ul>
         </div>
@@ -32,8 +36,8 @@
               <li class="cuentas">
                 @Auth
                   @if (Auth::user()->rol == 1)
-                    <a href="/nuevoProducto">Nuevo Producto</a>
-                    <a href="/nuevaReceta">Nueva Receta</a>
+                    <a href="/nuevoProducto">NUEVO PRODUCTO</a>
+                    <a href="/nuevaReceta">NUEVA RECETA</a>
                     <a href="/cuentas" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                      {{ __('LOGOUT') }}
