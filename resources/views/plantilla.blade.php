@@ -30,19 +30,31 @@
         <div class="menu_cuentas">
             <ul>
               <li class="cuentas">
-                @if (Auth::user()!== null)
-                  <a href="/">PERFIL</a>
-                  <a href="/carrito">CARRITO</a>
-                  <a href="/cuentas" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                   {{ __('LOGOUT') }}
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                      @csrf
-                  </form>
+                @Auth
+                  @if (Auth::user()->rol == 1)
+                    <a href="/nuevoProducto">Nuevo Producto</a>
+                    <a href="/nuevaReceta">Nueva Receta</a>
+                    <a href="/cuentas" onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                     {{ __('LOGOUT') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
+                  @elseif (Auth::user()->rol == 0)
+                    <a href="/">PERFIL</a>
+                    <a href="/carrito">CARRITO</a>
+                    <a href="/cuentas" onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                                  {{ __('LOGOUT') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
+                  @endif
                 @else
                   <a href="/cuentas">LOGIN / REGISTRO</a>
-                @endif
+                @endauth
               </li>
             </ul>
         </div>

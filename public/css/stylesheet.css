@@ -52,7 +52,7 @@ header {
 footer {
   background-color: lightgrey;
   position: relative;
-  top:124px;
+  top:120px;
 }
 .divisiones{
   display: flex;
@@ -143,7 +143,7 @@ main {
 /* SECCION LOGIN Y REGISTRO */
 .formularios {
   position: relative;
-  top: 124px;
+  top: 120px;
   display: flex;
   flex-direction: row;
 }

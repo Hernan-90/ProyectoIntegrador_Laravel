@@ -21,14 +21,5 @@
           </div>
         </aside>
       </main>
-      <div class"separador">
-        <img src="" alt="">
-      </div>
-      <div class="">
-        <a href="/nuevoProducto">Nuevo Producto</a>
-      </div>
-      <div class="">
-        <a href="/nuevaReceta">Nueva Receta</a>
-      </div>
     </div>
 @endsection
