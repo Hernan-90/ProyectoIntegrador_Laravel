@@ -19,13 +19,14 @@ Auth::routes();
 
 Route::get("/", "HomeController@index");
 
-Route::get("/cuentas", "CuentasController@index") ;
+Route::get("/cuentas", "CuentasController@index")->name('cuentas') ;
 
 Route::get("/contacto", function(){
   return view("contacto");
 });
 
 Route::get("/lacocina", "lacocinaController@index");
+Route::get("/lacocina", "ProductoController@show");
 
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
 Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");

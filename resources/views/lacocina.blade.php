@@ -20,6 +20,7 @@
     </div>
     <div class="productos_destacados">
       <div class="producto1">
+        @dd($productoDetalle)
         <img src="/storage/productos/{{$productoDetalle->imagen}}" alt="">
       </div>
       <div class="producto2">
