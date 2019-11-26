@@ -224,6 +224,11 @@ form small {
   color: #F8EE97;
   /* -webkit-text-stroke: 1px black; */
 }
+
+.productos_destacados, .containercarrito {
+  top: 120px;
+  position: relative;
+}
 /* @media (min-width:1024px) {
   body {
     max-width: 1200px;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
 class lacocinaController extends Controller
 {
@@ -23,6 +24,7 @@ class lacocinaController extends Controller
      */
     public function index()
     {
-        return view('lacocina');
+      $productoDetalle = Producto::all();
+      return view("lacocina", compact('productoDetalle'));
     }
 }

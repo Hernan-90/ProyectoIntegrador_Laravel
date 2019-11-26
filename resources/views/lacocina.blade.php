@@ -20,29 +20,16 @@
     </div>
     <div class="productos_destacados">
       <div class="producto1">
-        @dd($productoDetalle)
-        <img src="/storage/productos/{{$productoDetalle->imagen}}" alt="">
-      </div>
-      <div class="producto2">
-        <img src="" alt="">
-      </div>
-      <div class="producto3">
-        <img src="" alt="">
-      </div>
-      <div class="producto4">
-        <img src="" alt="">
-      </div>
-    </div>
-    <div class="productos">
-      <div class="producto1">
+        {{-- @dd($productoDetalle) --}}
+        @foreach ($productoDetalle as $producto)
+          <div class="">
+            {{$producto->nombreproducto}}
+          </div>
+          <img src="/storage/productos/{{$producto->imagen}}" alt="">
+          <button type="submit" name="button">
+            Agregar al Carrito
+          </button>
+        @endforeach
 
-      </div>
-
-    </div>
-    <div class="recetas">
-      <div class="producto1">
-
-      </div>
-    </div>
   </section>
 @endsection

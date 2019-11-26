@@ -26,7 +26,6 @@ Route::get("/contacto", function(){
 });
 
 Route::get("/lacocina", "lacocinaController@index");
-Route::get("/lacocina", "ProductoController@show");
 
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
 Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");
