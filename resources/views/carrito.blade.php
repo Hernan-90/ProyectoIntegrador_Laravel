@@ -6,7 +6,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          {{-- <th scope="col">#</th> --}}
           <th scope="col">Producto</th>
           <th scope="col">Cantidad</th>
           <th scope="col"></th>
@@ -16,7 +16,7 @@
       <tbody>
         @foreach ($carrito as $compra)
           <tr>
-            <th scope="row">{{$compra->id}}</th>
+            {{-- <th scope="row">{{$compra->id}}</th> --}}
             <td>{{$compra->name}}</td>
             <td>{{$compra->cant}}</td>
             <td>
