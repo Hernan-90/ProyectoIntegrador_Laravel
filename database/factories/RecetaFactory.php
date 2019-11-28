@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Receta::class, function (Faker $faker) {
 
-  $path = storage_path('\app\public\recetas');
+  $path = storage_path('app/public/recetas');
     return [
       'titulo' => $faker -> sentence(3),
       'ingredientes' => $faker -> sentence(10),
