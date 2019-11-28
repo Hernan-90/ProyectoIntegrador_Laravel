@@ -50,14 +50,26 @@ header {
 }
 /* ACA VA EL FOOTER */
 footer {
+  background-color: lightgrey;
   position: relative;
-  top:150px;
-  display: flex;
-  justify-content: space-around;
+  top:120px;
 }
-
+.divisiones{
+  display: flex;
+  align-items: center;
+}
+.contact_form {
+  width:33.33%;
+  display: flex;
+  flex-direction: column;
+}
 .redes {
-  justify-content: space-around;
+  width:33.33%;
+  display: flex;
+  flex-direction: column;
+}
+.iconos_redes{
+  display: flex;
 }
 #tw {
   padding: 10px;
@@ -74,10 +86,18 @@ footer {
   border: 1px solid black;
   border-radius: 90px;
 }
+.map{
+  width:33.33%;
+}
+.legales {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
 /* ACA VA LA SECCION PARA NAVEGAR */
 .webbody {
 position: relative;
-top: 124px;
+top: 120px;
 }
 main {
   width: 100%;
@@ -123,7 +143,7 @@ main {
 /* SECCION LOGIN Y REGISTRO */
 .formularios {
   position: relative;
-  top: 124px;
+  top: 120px;
   display: flex;
   flex-direction: row;
 }
@@ -203,6 +223,11 @@ form small {
   font-family: 'Lato', sans-serif;
   color: #F8EE97;
   /* -webkit-text-stroke: 1px black; */
+}
+
+.productos_destacados, .containercarrito {
+  top: 120px;
+  position: relative;
 }
 /* @media (min-width:1024px) {
   body {

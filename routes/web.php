@@ -19,19 +19,24 @@ Auth::routes();
 
 Route::get("/", "HomeController@index");
 
-Route::get("/cuentas", "CuentasController@index") ;
+Route::get("/cuentas", "CuentasController@index")->name('cuentas') ;
 
 Route::get("/contacto", function(){
   return view("contacto");
 });
 
 Route::get("/lacocina", "lacocinaController@index");
+Route::post("/agregarAlCarrito", "CarritoController@store");
 
-Route::get("/carrito", "CarritoController@index");
-Route::get("/historialCompra", "CarritoController@historial"); 
+Route::get("/carrito", "CarritoController@index")->middleware("auth");
+Route::post("/compraFinal", "CarritoController@cierreCompra");
+Route::post("/borrarProducto", "CarritoController@delete");
 
-Route::get("/nuevoProducto", "ProductoController@create");
+
+Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");
+
+Route::get("/nuevoProducto", "ProductoController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevoProducto", "ProductoController@store");
 
-Route::get("/nuevaReceta", "RecetaController@create");
+Route::get("/nuevaReceta", "RecetaController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevaReceta", "RecetaController@store");

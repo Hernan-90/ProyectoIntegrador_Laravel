@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Carrito;
+use App\Producto;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -37,19 +38,21 @@ class CarritoController extends Controller
      */
     public function store(Request $req)
     {
-      $productoSeleccionado = Product::find($req->id);
+      $productoSeleccionado = Producto::find($req->id);
       $compra = new Carrito;
 
       $compra->name = $productoSeleccionado->nombreproducto;
       $compra->price = $productoSeleccionado->precio1;
       $compra->description = $productoSeleccionado->descripcion;
       $compra->picture = $productoSeleccionado->imagen;
+      $compra->carritoNumero = $productoSeleccionado->carritoNumero;
       $compra->user_id = Auth::user()->id;
       $compra->estadoCompra = 0;
 
+
       $compra->save();
 
-      return redirect("/");
+      return redirect("/lacocina");
     }
 
     /**
@@ -97,12 +100,19 @@ class CarritoController extends Controller
         //
     }
 
-    public function cierreCompra(Request $req){
+    public function delete(Request $req){
+      $productoBorrado = Carrito::find($req->id);
+      $productoBorrado->delete();
+      return redirect("/carrito");
+    }
 
-      $compra= Carrito::where("user_id", Auth::user()->id)
+    public function cierreCompra(Request $req){
+      $compra = Carrito::where("user_id", Auth::user()->id)
                         ->where("estadoCompra", 0)
                         ->get();
+      // dd($compra);
       $carritoNumero = Carrito::max("carritoNumero") + 1;
+
 
       foreach ($compra as $item) {
         $item->estadoCompra = 1;
@@ -118,7 +128,7 @@ class CarritoController extends Controller
                             ->where("estadoCompra",1)
                             ->get()
                             ->groupBy("carritoNumero");
-      return view("/historialCompra", compact("historial"));
+      return view("historialCompra", compact("historial"));
     }
 
 }

@@ -35,13 +35,11 @@ class ProductoController extends Controller
      */
     public function store(Request $req)
     {
-
-
       $rules = [
       "nombreproducto" => "required|string|min:1|unique:productos,nombreproducto",
       "precio1" => "required|integer|min:1",
       "precio2" => "nullable|integer",
-      "categoria" => "required|integer",
+      "categoria_id" => "required|integer",
       "descripcion" => "required|string|min:1|max:250",
       "destacado" => "required|integer",
       "imagen" => "required|image",
@@ -57,14 +55,14 @@ class ProductoController extends Controller
     ];
 
     $this->validate($req, $rules, $messages);
-    $ruta = $req->file('imagen')->store('public/images/Products');
+    $ruta = $req->file('imagen')->store('public/productos');
     $nombreImg = basename($ruta);
 
     $producto = new Producto();
     $producto->nombreproducto = $req['nombreproducto'];
     $producto->precio1 = $req['precio1'];
     $producto->precio2 = $req['precio2'];
-    $producto->categoria = $req['categoria'];
+    $producto->categoria_id = $req['categoria_id'];
     $producto->descripcion = $req['descripcion'];
     $producto->destacado = $req['destacado'];
     $producto->ingredientes = $req['ingredientes'];
@@ -81,7 +79,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+      
     }
 
     /**
