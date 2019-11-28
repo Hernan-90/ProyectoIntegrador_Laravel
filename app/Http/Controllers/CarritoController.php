@@ -48,6 +48,7 @@ class CarritoController extends Controller
       $compra->carritoNumero = $productoSeleccionado->carritoNumero;
       $compra->user_id = Auth::user()->id;
       $compra->estadoCompra = 0;
+      $compra->carritoNumero = 
 
       $compra->save();
 

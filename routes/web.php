@@ -26,7 +26,11 @@ Route::get("/contacto", function(){
 });
 
 Route::get("/lacocina", "lacocinaController@index");
+<<<<<<< HEAD
 Route::post("/agregarAlCarrito", "CarritoController@store");
+=======
+Route::post('/agregarAlCarrito', 'CarritoController@store');
+>>>>>>> 123e3a4299bc28c2d74ffaffe912c2ee2bd993eb
 
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
 Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");
