@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Carrito;
+use App\Producto;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class CarritoController extends Controller
      */
     public function store(Request $req)
     {
-      $productoSeleccionado = Product::find($req->id);
+      $productoSeleccionado = Producto::find($req->id);
       $compra = new Carrito;
 
       $compra->name = $productoSeleccionado->nombreproducto;
@@ -46,6 +47,7 @@ class CarritoController extends Controller
       $compra->picture = $productoSeleccionado->imagen;
       $compra->user_id = Auth::user()->id;
       $compra->estadoCompra = 0;
+      $compra->carritoNumero = 
 
       $compra->save();
 

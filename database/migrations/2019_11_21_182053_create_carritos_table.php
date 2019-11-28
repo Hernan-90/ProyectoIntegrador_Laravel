@@ -22,7 +22,7 @@ class CreateCarritosTable extends Migration
             // $table->integer('cant');
             $table->bigInteger('user_id')->unsigned();
             $table->smallInteger('estadoCompra')->default(0);
-            $table->bigInteger('carritoNumero');
+            $table->bigInteger('carritoNumero')->nullable();
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@
         @foreach ($carrito as $compra)
           <tr>
             <th scope="row">{{$compra->id}}</th>
-            <td>{{$compra->n}}</td>
+            <td>{{$compra->name}}</td>
             <td>{{$compra->cant}}</td>
             <td>{{$compra->price}}</td>
           </tr>
