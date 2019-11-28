@@ -3,17 +3,18 @@
 @section('cuerpo')
 
   <h2>Mis compras</h2>
-    @forelse ($historial as $carritoNumero => $carr)
-      <p>Carrito nº: {{$carritoNumero}}</p>
+    @foreach ($historial as $carritoNumero => $carr)
+      <p>Carrito numero: {{$carritoNumero}}</p>
       <ul>
-      @forelse ($carr as $item)
-        <li>Producto: {{$item->name}}</li>
-      @empty
-        <p>No hay productos para este carrito.</p>
-      @endforelse
-      </ul>
-    @empty
-      <p>No hay compras.</p>
-    @endforelse
+      @foreach ($carr as $item)
+          <li>Producto: {{$item->name}}</li>
+        @empty
+<p>No hay productos para este carrito.</p>
+      @endforeach
+    </ul>
+  @empty
+    <p>No hay compras.</p>
+    @endforeach
+
 
 @endsection

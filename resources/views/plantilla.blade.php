@@ -46,7 +46,7 @@
                         @csrf
                     </form>
                   @elseif (Auth::user()->rol == 0)
-                    <a href="/">PERFIL</a>
+                    <a href="/historialCompra">PERFIL</a>
                     <a href="/carrito">CARRITO</a>
                     <a href="/cuentas" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">

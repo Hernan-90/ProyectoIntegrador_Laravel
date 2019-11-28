@@ -128,6 +128,7 @@ class CarritoController extends Controller
                             ->where("estadoCompra",1)
                             ->get()
                             ->groupBy("carritoNumero");
+
       return view("historialCompra", compact("historial"));
     }
 
