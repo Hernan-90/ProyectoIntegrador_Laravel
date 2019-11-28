@@ -110,7 +110,9 @@ class CarritoController extends Controller
       $compra = Carrito::where("user_id", Auth::user()->id)
                         ->where("estadoCompra", 0)
                         ->get();
+      // dd($compra);
       $carritoNumero = Carrito::max("carritoNumero") + 1;
+
 
       foreach ($compra as $item) {
         $item->estadoCompra = 1;

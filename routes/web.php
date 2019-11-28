@@ -29,7 +29,7 @@ Route::get("/lacocina", "lacocinaController@index");
 Route::post("/agregarAlCarrito", "CarritoController@store");
 
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
-Route::post("/compraFinal', 'CarritoController@cierreCompra");
+Route::post("/compraFinal", "CarritoController@cierreCompra");
 Route::post("/borrarProducto", "CarritoController@delete");
 
 
