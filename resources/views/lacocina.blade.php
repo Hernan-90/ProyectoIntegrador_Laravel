@@ -26,9 +26,13 @@
             {{$producto->nombreproducto}}
           </div>
           <img src="/storage/productos/{{$producto->imagen}}" alt="">
-          <button type="submit" name="button">
-            Agregar al Carrito
-          </button>
+          <form class="" action="/agregarAlCarrito" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$producto->id}}">
+            <button type="submit">
+              Agregar al Carrito
+            </button>
+          </form>
         @endforeach
 
   </section>
