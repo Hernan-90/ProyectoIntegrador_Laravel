@@ -1,20 +1,17 @@
 @extends('plantilla')
 
 @section('cuerpo')
-
-  <h2>Mis compras</h2>
-    @foreach ($historial as $carritoNumero => $carr)
-      <p>Carrito numero: {{$carritoNumero}}</p>
-      <ul>
-      @foreach ($carr as $item)
-          <li>Producto: {{$item->name}}</li>
+  <div class="historial">
+    <h2>Mis compras</h2>
+      @foreach ($historial as $carritoNumero => $carr)
+        <p>Carrito numero: {{$carritoNumero}}</p>
+        @forelse ($carr as $key => $value)
+          <p>{{$value->name}}</p>
+          <p>{{$value->price}}</p>
+          <p>{{$value->description}}</p>
         @empty
-<p>No hay productos para este carrito.</p>
+          <p>No hay productos para este carrito.</p>
+        @endforelse
       @endforeach
-    </ul>
-  @empty
-    <p>No hay compras.</p>
-    @endforeach
-
-
+  </div>
 @endsection

@@ -225,7 +225,7 @@ form small {
   /* -webkit-text-stroke: 1px black; */
 }
 
-.productos_destacados, .containercarrito {
+.productos_destacados, .containercarrito, .historial {
   top: 120px;
   position: relative;
 }
