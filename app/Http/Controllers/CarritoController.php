@@ -48,11 +48,11 @@ class CarritoController extends Controller
       $compra->carritoNumero = $productoSeleccionado->carritoNumero;
       $compra->user_id = Auth::user()->id;
       $compra->estadoCompra = 0;
-      $compra->carritoNumero = 
+
 
       $compra->save();
 
-      return redirect("/");
+      return redirect("/lacocina");
     }
 
     /**
@@ -100,9 +100,14 @@ class CarritoController extends Controller
         //
     }
 
-    public function cierreCompra(Request $req){
+    public function delete(Request $req){
+      $productoBorrado = Carrito::find($req->id);
+      $productoBorrado->delete();
+      return redirect("/carrito");
+    }
 
-      $compra= Carrito::where("user_id", Auth::user()->id)
+    public function cierreCompra(Request $req){
+      $compra = Carrito::where("user_id", Auth::user()->id)
                         ->where("estadoCompra", 0)
                         ->get();
       $carritoNumero = Carrito::max("carritoNumero") + 1;

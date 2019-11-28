@@ -29,6 +29,10 @@ Route::get("/lacocina", "lacocinaController@index");
 Route::post("/agregarAlCarrito", "CarritoController@store");
 
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
+Route::post("/compraFinal', 'CarritoController@cierreCompra");
+Route::post("/borrarProducto", "CarritoController@delete");
+
+
 Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");
 
 Route::get("/nuevoProducto", "ProductoController@create")->middleware("auth")->middleware('roles');
