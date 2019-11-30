@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/stylesheet.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
   <body>
     <header class="">
@@ -67,19 +67,20 @@
     <footer>
       <div class="divisiones">
         <div class="contact_form">
-          <h2>PREGUNTAS?</h2>
+          <h3>Formulario de contacto</h3>
           <form class="" action="/" method="post">
             <label for="">Nombre</label>
             <input type="text" name="contact_name" value="">
-            <label for="">Mail</label>
+            <label for="">Email</label>
             <input type="text" name="contact_mail" value="">
-            <label for="">Comentario:</label>
+            <label for="">Mensaje</label>
             <input type="text" name="coment" value="">
             <button type="submit" name="button">Enviar</button>
           </form>
         </div>
         <div class="redes">
-          <h2>REDES y CONTACTO</h2>
+          <h3>Redes y Contacto</h3>
+          <br>
             <ul class="iconos_redes">
               <li>
                 <a id="tw" href="#"><i class="fab fa-twitter"></i></a>
@@ -91,8 +92,9 @@
                 <a id="insta" href="#"><i class="fab fa-instagram"></i></a>
               </li>
             </ul>
-            <a href="#">cuentafalsa@gmail.com</a>
-            <a href="#">cel: 11 1234 5678</a>
+            <br>
+            <a href="#">Email: cuentafalsa@gmail.com</a>
+            <a href="#">Tel: 11 1234 5678</a>
         </div>
         <div class="map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26270.199593640067!2d-58.440136068060625!3d-34.60985192797749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5e41da17ff%3A0xebce9fad2698f23f!2sAlmagro%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1574340564290!5m2!1ses-419!2sar" width="600" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
