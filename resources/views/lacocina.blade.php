@@ -33,6 +33,12 @@
               Agregar al Carrito
             </button>
           </form>
+          @auth
+            @if (Auth::user()->rol == 1)
+              <a href="/editarProducto/{{$producto->id}}">Editar</a>
+            @endif
+          @endauth
+
         @endforeach
 
   </section>

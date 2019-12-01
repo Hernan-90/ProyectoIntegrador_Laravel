@@ -31,12 +31,15 @@ Route::post("/agregarAlCarrito", "CarritoController@store")->middleware("auth");
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
 Route::post("/compraFinal", "CarritoController@cierreCompra");
 Route::post("/borrarProducto", "CarritoController@delete");
-
-
 Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");
 
 Route::get("/nuevoProducto", "ProductoController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevoProducto", "ProductoController@store");
-
 Route::get("/nuevaReceta", "RecetaController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevaReceta", "RecetaController@store");
+
+Route::get("/editarProducto/{id}","ProductoController@edit");
+// Route::get("/editarReceta/{id}";"");
+//
+// Route::post("";"");
+// Route::post("";"");

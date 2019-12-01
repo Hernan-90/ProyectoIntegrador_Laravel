@@ -79,7 +79,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-      
+
     }
 
     /**
@@ -88,9 +88,10 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit(Producto $producto, $id)
     {
-        //
+      $productoAEditar = Producto::find($id);
+      return view("editarProducto", compact("productoAEditar"));
     }
 
     /**
