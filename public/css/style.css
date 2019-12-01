@@ -422,18 +422,10 @@ input{
   .register h1{
     font-size: 28;
   }
-
   /* ACA VA EL FOOTER */
-
-}
-
-@media (min-device-width: 1440px) {
-  /* ACA VA EL FOOTER */
-.contact_form, .redes{
-  font-size: 22;
-}
-}
-@media (min-device-width: 2560px) {
+  .contact_form, .redes{
+    font-size: 22;
+  }
   /* ACA VA LA SECCION PARA NAVEGAR */
   .cuadradob{
     font-size: 40;
@@ -443,14 +435,14 @@ input{
     width: 800px;
   }
   .welcome button{
-padding: 20px;
-font-size: 42;
-}
+    padding: 20px;
+    font-size: 42;
+  }
   /* ACA VA EL FOOTER */
   .contact_form, .redes{
     font-size: 35;
-}
-.divisiones{
-  height: 400px;
-}
+  }
+  .divisiones{
+    height: 400px;
+  }
 }
