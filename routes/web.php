@@ -27,12 +27,13 @@ Route::get("/contacto", function(){
 
 Route::get("/lacocina", "lacocinaController@index");
 Route::post("/agregarAlCarrito", "CarritoController@store")->middleware("auth");
+// Route::post("/guardarReceta", "")->middleware("auth";
 
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
 Route::post("/compraFinal", "CarritoController@cierreCompra");
 Route::post("/borrarProducto", "CarritoController@delete");
 
-Route::get("/historialCompra", "CarritoController@historial")->middleware("auth");
+Route::get("/perfil", "CarritoController@historial")->middleware("auth");
 
 Route::get("/nuevoProducto", "ProductoController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevoProducto", "ProductoController@store");

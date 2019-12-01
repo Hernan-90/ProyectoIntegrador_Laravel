@@ -17,7 +17,7 @@ class CarritoController extends Controller
     public function index()
     {
       $carrito = Carrito::where("user_id", Auth::user()->id)->where("estadoCompra", 0)->get();
-        return view("carrito", compact("carrito"));
+      return view("carrito", compact("carrito"));
     }
 
     /**
@@ -129,7 +129,7 @@ class CarritoController extends Controller
                             ->get()
                             ->groupBy("carritoNumero");
 
-      return view("historialCompra", compact("historial"));
+      return view("perfil", compact("historial"));
     }
 
 }
