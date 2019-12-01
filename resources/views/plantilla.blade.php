@@ -64,10 +64,11 @@
         </div>
     </header>
     @yield('cuerpo')
-    <footer>
+    <footer class="f">
       <div class="divisiones">
+        <div class="formredes">
         <div class="contact_form">
-          <h3>Formulario de contacto</h3>
+          <h4>Formulario de contacto</h4>
           <form class="" action="/" method="post">
             <label for="">Nombre</label>
             <input type="text" name="contact_name" value="">
@@ -79,7 +80,7 @@
           </form>
         </div>
         <div class="redes">
-          <h3>Redes y Contacto</h3>
+          <h4>Redes y Contacto</h4>
           <br>
             <ul class="iconos_redes">
               <li>
@@ -96,6 +97,7 @@
             <a href="#">Email: cuentafalsa@gmail.com</a>
             <a href="#">Tel: 11 1234 5678</a>
         </div>
+      </div>
         <div class="map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26270.199593640067!2d-58.440136068060625!3d-34.60985192797749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5e41da17ff%3A0xebce9fad2698f23f!2sAlmagro%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1574340564290!5m2!1ses-419!2sar" width="600" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
