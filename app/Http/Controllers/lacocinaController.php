@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Receta;
 
 class lacocinaController extends Controller
 {
@@ -25,7 +26,7 @@ class lacocinaController extends Controller
     public function index()
     {
       $productoDetalle = Producto::all();
-      $recetaDetalle = Producto::all();
+      $recetaDetalle = Receta::all();
       return view("lacocina", compact('productoDetalle', 'recetaDetalle'));
     }
 }

@@ -41,5 +41,5 @@ Route::post("/nuevaReceta", "RecetaController@store");
 
 Route::get("/editarProducto/{id}", "ProductoController@edit")->middleware("auth")->middleware('roles');
 Route::post("/editarProducto/{id}", "ProductoController@update");
-// Route::get("/editarReceta/{id}", "RecetaController@edit")->middleware("auth")->middleware('roles');
-// Route::post("/editarReceta/{id}", "RecetaController@update");
+Route::get("/editarReceta/{id}", "RecetaController@edit")->middleware("auth")->middleware('roles');
+Route::post("/editarReceta/{id}", "RecetaController@update");

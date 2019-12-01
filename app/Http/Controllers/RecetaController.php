@@ -83,9 +83,10 @@ class RecetaController extends Controller
      * @param  \App\Receta  $receta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Receta $receta)
+    public function edit(Receta $receta, $id)
     {
-        //
+      $recetaAEditar = Receta::find($id);
+      return view("editarReceta", compact("recetaAEditar"));
     }
 
     /**
@@ -95,9 +96,32 @@ class RecetaController extends Controller
      * @param  \App\Receta  $receta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Receta $receta)
+    public function update(Request $req)
     {
-        //
+      $rules = [
+        "titulo" => ['required', 'string', 'max:255'],
+        "ingredientes" => ['required', 'string', 'max:255'],
+        "materiales" => ['required', 'string', 'max:255'],
+        "preparacion" => ['required', 'string', 'max:255'],
+        "foto_producto" => ["file", "image"],
+      ];
+
+      $messages = [
+        "required" => "El campo :attribute no puede estar vacio."
+      ];
+
+      $this->validate($req, $rules, $messages);
+      $ruta = $req->file('foto_producto')->store('public/recetas');
+      $nombreImg = basename($ruta);
+
+      $receta = Receta::find($req->id);
+      $receta->titulo = $req['titulo'];
+      $receta->ingredientes = $req['ingredientes'];
+      $receta->materiales = $req['materiales'];
+      $receta->preparacion = $req['preparacion'];
+      $receta->foto_producto = $nombreImg;
+      $receta->save();
+      return redirect('/lacocina');
     }
 
     /**

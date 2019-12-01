@@ -42,12 +42,22 @@
     </div>
     <div class="Recetas">
       <div class="receta1">
+        {{-- @dd($recetaDetalle) --}}
         @foreach ($recetaDetalle as $receta)
           <div class="">
             {{$receta->titulo}}
           </div>
-          <img src="/storage/productos/{{$receta->foto_producto}}" alt="">
-          <form class="" action="/agregarAlCarrito" method="post">
+          <img src="/storage/recetas/{{$receta->foto_producto}}" alt="">
+          <div class="">
+            {{$receta->ingredientes}}
+          </div>
+          <div class="">
+            {{$receta->materiales}}
+          </div>
+          <div class="">
+            {{$receta->preparacion}}
+          </div>
+          <form class="" action="/guardarReceta" method="post">
             @csrf
             <input type="hidden" name="id" value="{{$receta->id}}">
             <button type="submit">
@@ -56,7 +66,7 @@
           </form>
           @auth
             @if (Auth::user()->rol == 1)
-              <a href="/editarProducto/{{$producto->id}}">Editar</a>
+              <a href="/editarReceta/{{$receta->id}}">Editar</a>
             @endif
           @endauth
         @endforeach
