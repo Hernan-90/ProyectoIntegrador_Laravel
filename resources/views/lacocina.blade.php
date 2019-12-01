@@ -20,7 +20,6 @@
     </div>
     <div class="productos_destacados">
       <div class="producto1">
-        {{-- @dd($productoDetalle) --}}
         @foreach ($productoDetalle as $producto)
           <div class="">
             {{$producto->nombreproducto}}
