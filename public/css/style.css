@@ -248,13 +248,10 @@ input{
   .contact_form, .iconos_redes, .redes{
     font-size: 12;
   }
-}
-@media (min-device-width:425px){
-/* ACA VA EL FOOTER */
-
-.formredes{
-  display: flex;
-}
+  /* ACA VA EL FOOTER */
+  .formredes{
+    display: flex;
+  }
   .contact_form {
     width:50%;
     padding-top: 10px;
@@ -272,168 +269,161 @@ input{
   }
 }
 @media (min-width:768px) {
-/* ACA VA EL HEADER */
-header {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 90;
-}
-.menu,.menu_cuentas {
-  width: 33.33%;
-}
-.nav{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.logo  {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-.logo a {
-  margin: 0;
-}
-.cuentas {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#logout-form {
-  display: none;
-}*/
-/* ACA VA EL FOOTER */
-footer {
-top: 400px;
-}
-.f{
-  top: 120px;
-}
-.divisiones{
-  display: flex;
-  position: relative;
-}
-.contact_form {
-  width:33.33%;
-}
-.redes {
-  width:33.33%;
-}
-.map{
-  width: 40%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 25px;
-}
-div .map{
-  overflow: hidden;
-}
-.contact_form, .redes{
-padding-top: 0px;
-}
-/* ACA VA LA SECCION PARA NAVEGAR */
-.webbody {
-top: 120px;
-position: relative;
-}
-main {
-  display: flex;
-  flex-direction: row;
-}
-.image, .welcome {
-  width: 50%;
-}
-.image img {
-  display: flex;
-  flex-wrap: wrap;
-}
-.cuadradoa{
-  width: 591px;
-}
-.cuadradob{
-  width: 550px;
-}
-.separador {
-  width: 100%;
-  height: 150px;
-}
-
-
-
-
-
-
-
-/* SECCION LOGIN Y REGISTRO */
-.formularios {
-  position: relative;
-  top: 120px;
-  display: flex;
-  flex-direction: row;
-}
-.login, .register{
-  padding-top: 50px;
-  padding-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-form small {
-  color: red;
-}
-.productos_destacados, .containercarrito, .historial {
+  /* ACA VA EL HEADER */
+  header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 90;
+  }
+  .menu,.menu_cuentas {
+    width: 33.33%;
+  }
+  .nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .logo  {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .logo a {
+    margin: 0;
+  }
+  .cuentas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #logout-form {
+    display: none;
+  }*/
+  /* ACA VA EL FOOTER */
+  footer {
+  top: 400px;
+  }
+  .f{
+    top: 120px;
+  }
+  .divisiones{
+    display: flex;
+    position: relative;
+  }
+  .contact_form {
+    width:33.33%;
+  }
+  .redes {
+    width:33.33%;
+  }
+  .map{
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+  }
+  div .map{
+    overflow: hidden;
+  }
+  .contact_form, .redes{
+  padding-top: 0px;
+  }
+  /* ACA VA LA SECCION PARA NAVEGAR */
+  .webbody {
   top: 120px;
   position: relative;
-}
-.cuadrado2, .cuadrado4 {
-  padding: 10px;
-}
-.cuadrado4 {
-  width: 250px;
-}
-
-}
-
-@media (min-device-width: 1024px) {
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+  .image, .welcome {
+    width: 50%;
+  }
+  .image img {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cuadradoa{
+    width: 591px;
+  }
+  .cuadradob{
+    width: 550px;
+  }
+  .separador {
+    width: 100%;
+    height: 150px;
+  }
   /* SECCION LOGIN Y REGISTRO */
-  .cuadrado1{
-    padding: 20px;
-    width: 257px;
+  .formularios {
+    position: relative;
+    top: 120px;
+    display: flex;
+    flex-direction: row;
   }
-  .cuadrado2{
-    padding: 20px;
-    width: 213px;
+  .login, .register{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
   }
-  .cuadrado3{
-    padding: 20px;
-    width: 389px;
-  }
-  .cuadrado4{
-    padding: 20px;
-    width: 346px;
-  }
-.login, .reg{
-  font-size: 20;
-}
-.register h1{
-  font-size: 28;
-}
 
-/* ACA VA EL FOOTER */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  form small {
+    color: red;
+  }
+  .productos_destacados, .containercarrito, .historial {
+    top: 120px;
+    position: relative;
+  }
+  .cuadrado2, .cuadrado4 {
+    padding: 10px;
+  }
+  .cuadrado4 {
+    width: 250px;
+  }
+
+  }
+
+  @media (min-device-width: 1024px) {
+    /* SECCION LOGIN Y REGISTRO */
+    .cuadrado1{
+      padding: 20px;
+      width: 257px;
+    }
+    .cuadrado2{
+      padding: 20px;
+      width: 213px;
+    }
+    .cuadrado3{
+      padding: 20px;
+      width: 389px;
+    }
+    .cuadrado4{
+      padding: 20px;
+      width: 346px;
+    }
+  .login, .reg{
+    font-size: 20;
+  }
+  .register h1{
+    font-size: 28;
+  }
+
+  /* ACA VA EL FOOTER */
 
 }
 

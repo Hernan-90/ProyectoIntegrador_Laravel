@@ -12,7 +12,7 @@ a {
 }
 body {
   background-color: white;
-}*/
+}
 header {
   background-color: white;
   position: fixed;
@@ -49,7 +49,7 @@ header {
   display: none;
 }
 /* ACA VA EL FOOTER */
-/*footer {
+footer {
   background-color: lightgrey;
   position: relative;
   top:120px;
@@ -93,7 +93,7 @@ header {
   text-align: center;
   background-color: black;
   color: white;
-}*/
+}
 /* ACA VA LA SECCION PARA NAVEGAR */
 .webbody {
 position: relative;
