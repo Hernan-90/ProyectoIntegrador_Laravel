@@ -25,6 +25,7 @@ class lacocinaController extends Controller
     public function index()
     {
       $productoDetalle = Producto::all();
-      return view("lacocina", compact('productoDetalle'));
+      $recetaDetalle = Producto::all();
+      return view("lacocina", compact('productoDetalle', 'recetaDetalle'));
     }
 }
