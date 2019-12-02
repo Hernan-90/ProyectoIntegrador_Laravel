@@ -24,6 +24,9 @@
                 <a href="/contacto">NOSOTROS</a>
               @endauth
             </li>
+            <li>
+              <a href="#"><i class="fas fa-bars"></i></a>
+            </li>
           </ul>
         </div>
         <div class="logo">
