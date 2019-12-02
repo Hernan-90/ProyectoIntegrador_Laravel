@@ -11,20 +11,20 @@
     <header class="">
         <div class="menu">
           <ul class="nav">
-            <li>
+            <li class="no_hamburger">
               <a href="/">HOME</a>
             </li>
-            <li>
+            <li class="no_hamburger">
               <a href="/lacocina">LA COCINA</a>
             </li>
-            <li>
+            <li class="no_hamburger">
               @auth
                 <a href="/recetario">RECETARIO</a>
               @else
                 <a href="/contacto">NOSOTROS</a>
               @endauth
             </li>
-            <li>
+            <li class="hamburger">
               <a href="#"><i class="fas fa-bars"></i></a>
             </li>
           </ul>
