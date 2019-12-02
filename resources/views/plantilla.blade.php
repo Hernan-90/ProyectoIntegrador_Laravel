@@ -47,7 +47,7 @@
                     </form>
                   @elseif (Auth::user()->rol == 0)
                     <a href="/perfil">PERFIL</a>
-                    <a href="/carrito">CARRITO</a>
+                    <a href="/carrito">CARRITO ()</a>
                     <a href="/cuentas" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                                   {{ __('LOGOUT') }}
