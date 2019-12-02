@@ -32,16 +32,16 @@
           </div>
           <div class="">
             {{$producto->descripcion}}
-            <button type="submit">
+            {{-- <button type="submit">
               Agregar al Carrito
-            </button>
+            </button> --}}
           </div>
           <form class="" action="/agregarAlCarrito" method="post">
             @csrf
             <input type="hidden" name="id" value="{{$producto->id}}">
-            {{-- <button type="submit">
+            <button type="submit">
               Agregar al Carrito
-            </button> --}}
+            </button>
           </form>
           @auth
             @if (Auth::user()->rol == 1)
