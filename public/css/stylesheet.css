@@ -13,6 +13,25 @@ a {
 body {
   background-color: white;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+input{
+  background-color: rgb(232, 240, 254);
+}
+#avatar::-webkit-file-upload-button{
+visibility: hidden;
+width: 0.1px;
+}
+#avatar{
+  width: 150px;
+  padding: 2px;
+  display: flex;
+}
+
 header {
   background-color: white;
   position: fixed;
@@ -24,57 +43,35 @@ header {
   align-items: center;
   z-index: 90;
 }
-.menu,.menu_cuentas {
-  width: 33.33%;
-}
-.nav{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.logo  {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-.logo a {
-  margin: 0;
-}
-.cuentas {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#logout-form {
-  display: none;
-}
 /* ACA VA EL FOOTER */
 footer {
   background-color: lightgrey;
   position: relative;
-  top:120px;
+  top: 120px;
 }
 .divisiones{
-  display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .contact_form {
-  width:33.33%;
+  width:100%;
   display: flex;
   flex-direction: column;
 }
 .redes {
-  width:33.33%;
+  width:100%;
   display: flex;
   flex-direction: column;
 }
 .iconos_redes{
   display: flex;
+  width:140px;
 }
 #tw {
   padding: 10px;
   border: 1px solid black;
   border-radius: 90px;
+  right: 5px;
 }
 #fb{
   padding: 10px 14px;
@@ -86,75 +83,100 @@ footer {
   border: 1px solid black;
   border-radius: 90px;
 }
-.map{
-  width:33.33%;
+.map iframe{
+  width: 100%;
 }
 .legales {
   text-align: center;
   background-color: black;
   color: white;
 }
+.contact_form button{
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: white;
+}
+.map {
+  justify-content: center;
+}
+
 /* ACA VA LA SECCION PARA NAVEGAR */
+main {
+  width: 100%;
+}
+.image{
+  width: 100%;
+  overflow: hidden;
+}
+.image img{
+  width: 100%;
+  display: none;
+}
 .webbody {
 position: relative;
 top: 120px;
 }
-main {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.image, .welcome {
-  width: 50%;
-}
-.image img {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
+
 .welcome {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #97F8A0;
+  overflow: hidden;
 }
 .cuadradoa{
-  border: 2px solid white;
   border-radius: 30px;
-  width: 591px;
   padding: 20px;
   display: flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  float: left;
 }
 .cuadradob{
   background-color: white;
   border-radius: 30px;
-  width: 550px;
-  padding: 20px;
+  padding: 10px;
   display: flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  flex-direction: column;
+  /*width: 200px;*/
 }
-.separador {
-  width: 100%;
-  height: 150px;
+
+.welcome button {
+  background-color: #F8EE97;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
 }
+
 /* SECCION LOGIN Y REGISTRO */
 .formularios {
   position: relative;
   top: 120px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .login, .register{
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
 }
 .login {
   background-color: #F8EE97;
@@ -166,34 +188,22 @@ main {
   border: 2px solid white;
   padding: 20px;
   border-radius: 15px;
-  width: 257px;
 }
 .cuadrado2{
   background-color: white;
   padding: 20px;
   border-radius: 15px;
-  width: 213px;
 }
 .cuadrado3{
   border: 2px solid white;
   padding: 20px;
   border-radius: 15px;
-  width: 389px;
+
 }
 .cuadrado4{
   background-color: white;
-  padding: 20px;
+  padding: 2px;
   border-radius: 15px;
-  width: 346px;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-}
-form small {
-  color: red;
 }
 .log button{
   background-color: #97F8A0;
@@ -214,18 +224,307 @@ form small {
 .welcome button a {
   margin-left: 0px;
 }
+#avatar{
+  background-color: lightgrey;
+  border-radius: 10px;
+}
+/*.cuadrado1, .cuadrado3{
+  font-size: 12;
+}
+.login h1, .register h1{
+  font-size: 16;
+}
+.login, .register{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  align-items: center;
+}
+.cuadrado1{
+  padding: 10px;
+  width: 200px;
+}
+.cuadrado2{
+  padding: 10px;
+  width: 150px;
+}
+.cuadrado3{
+  padding: 10px;
+}
+.cuadrado4{
+  padding: 5px;
+}
+.contact_form, .iconos_redes, .redes{
+  font-size: 12;
+}
+}*/
+
+@media (min-device-width: 768px) {
+  /* ACA VA EL FOOTER */
+footer{
+  top:120px;
+}
+.divisiones{
+  display: flex;
+  position: relative;
+}
+.contact_form {
+  width:33.33%;
+}
+.redes {
+  width:33.33%;
+}
+.map{
+  width: 40%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+}
+div .map{
+  overflow: hidden;
+}
+/* ACA VA LA SECCION PARA NAVEGAR */
+.webbody {
+  top: 120px;
+  position: relative;
+}
+main {
+    display: flex;
+}
+main {
+  width: 100%;
+  /*height: 150px;*/
+}
+.image img{
+  display: block;
+}
+.cuadradoa{
+border: 2px solid white;
+}
+main {
+  display: flex;
+  flex-direction: row;
+}
+.welcome{
+  flex-direction: unset;
+}
+.image, .welcome {
+  width: 50%;
+}
+.image img {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cuadradoa{
+  width: 591px;
+}
+.cuadradob{
+  width: 550px;
+}
+.separador {
+  width: 100%;
+  height: 150px;
+}
+/* SECCION LOGIN Y REGISTRO */
+.formularios {
+  flex-direction: row;
+}
+.cuadrado1{
+  padding: 20px;
+  width: 257px;
+}
+.cuadrado2{
+  padding: 20px;
+  width: 213px;
+}
+.cuadrado3{
+  padding: 20px;
+  width: 389px;
+}
+.cuadrado4{
+  padding: 20px;
+  width: 346px;
+}
+
+form small {
+  color: red;
+}
+.log button{
+  background-color: #97F8A0;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+.productos_destacados, .containercarrito, .historial {
+  top: 120px;
+  position: relative;
+}
+.reg button, .welcome button{
+  background-color: #F8EE97;
+  border: none;
+}
+.cuadrado2, .cuadrado4 {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+.welcome button a {
+  margin-left: 0px;
+}
 .login strong {
   font-family: 'Lato', sans-serif;
   color: #97F8A0;
-  -webkit-text-stroke: 0.5px black;
+/*  -webkit-text-stroke: 0.5px black;*/
+}
+.cuadrado4 {
+  width: 250px;
 }
 .register strong {
   font-family: 'Lato', sans-serif;
   color: #F8EE97;
   /* -webkit-text-stroke: 1px black; */
+
 }
 
-.productos_destacados, .containercarrito, .historial, .Recetas {
+.productos_destacados, .containercarrito, .historial {
   top: 120px;
   position: relative;
+
+}
+@media (min-device-width: 1024px) {
+
+  .menu,.menu_cuentas {
+    width: 33.33%;
+  }
+  .nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .logo  {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .logo a {
+    margin: 0;
+  }
+  .cuentas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #logout-form {
+    display: none;
+  }
+  /* ACA VA EL FOOTER */
+  footer {
+    background-color: lightgrey;
+    position: relative;
+    top:120px;
+  }
+  .divisiones{
+    display: flex;
+    align-items: center;
+  }
+  .contact_form {
+    width:33.33%;
+    display: flex;
+    flex-direction: column;
+  }
+  .redes {
+    width:33.33%;
+    display: flex;
+    flex-direction: column;
+  }
+  .map{
+    width:33.33%;
+  }
+  /* ACA VA LA SECCION PARA NAVEGAR */
+  .webbody {
+  position: relative;
+  top: 120px;
+  }
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .image, .welcome {
+    width: 50%;
+  }
+  .image img {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #97F8A0;
+  }
+  .cuadradoa{
+    border: 2px solid white;
+    border-radius: 30px;
+    width: 591px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap
+  }
+  .cuadradob{
+    background-color: white;
+    border-radius: 30px;
+    width: 550px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap
+  }
+  .separador {
+    width: 100%;
+    height: 150px;
+  }
+  /* SECCION LOGIN Y REGISTRO */
+  .formularios {
+    flex-direction: row;
+  }
+  .login, .register{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 50%;
+  }
+  .cuadrado1{
+    width: 257px;
+  }
+  .cuadrado2{
+    width: 213px;
+  }
+  .cuadrado3{
+    width: 389px;
+  }
+  .cuadrado4{
+    width: 346px;
+  }
+  form small {
+    color: red;
+  }
+  /*.login strong {
+    font-family: 'Lato', sans-serif;
+    color: #97F8A0;
+    -webkit-text-stroke: 0.5px black;
+  }
+  .register strong {
+    font-family: 'Lato', sans-serif;
+    color: #F8EE97;
+  }
+    /* -webkit-text-stroke: 1px black; */
+
+  .productos_destacados, .containercarrito, .historial, .Recetas {
+    top: 120px;
+    position: relative;
+  }
 }
