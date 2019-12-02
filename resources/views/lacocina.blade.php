@@ -21,16 +21,27 @@
     <div class="productos_destacados">
       <div class="producto1">
         @foreach ($productoDetalle as $producto)
+          {{-- @dd($producto) --}}
           <div class="">
             {{$producto->nombreproducto}}
           </div>
           <img src="/storage/productos/{{$producto->imagen}}" alt="">
-          <form class="" action="/agregarAlCarrito" method="post">
-            @csrf
-            <input type="hidden" name="id" value="{{$producto->id}}">
+          <div class="">
+            <p>${{$producto->precio1}}</p>
+            <p>${{$producto->precio2}}</p>
+          </div>
+          <div class="">
+            {{$producto->descripcion}}
             <button type="submit">
               Agregar al Carrito
             </button>
+          </div>
+          <form class="" action="/agregarAlCarrito" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$producto->id}}">
+            {{-- <button type="submit">
+              Agregar al Carrito
+            </button> --}}
           </form>
           @auth
             @if (Auth::user()->rol == 1)
