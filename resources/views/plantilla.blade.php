@@ -19,7 +19,7 @@
             </li>
             <li>
               @auth
-                <a href="/recetas">RECETAS</a>
+                <a href="/recetario">RECETARIO</a>
               @else
                 <a href="/contacto">NOSOTROS</a>
               @endauth

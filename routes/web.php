@@ -19,27 +19,31 @@ Auth::routes();
 
 Route::get("/", "HomeController@index");
 
-Route::get("/cuentas", "CuentasController@index")->name('cuentas') ;
+Route::get("/cuentas", "CuentasController@index")->name('cuentas');
+
+Route::get("/lacocina", "lacocinaController@index");
+Route::post("/agregarAlCarrito", "CarritoController@store")->middleware("auth");
+Route::post("/guardarReceta", "RecetarioController@store")->middleware("auth");
+
+Route::get("/recetario", "RecetarioController@index")->middleware("auth");
 
 Route::get("/contacto", function(){
   return view("contacto");
 });
 
-Route::get("/lacocina", "lacocinaController@index");
-Route::post("/agregarAlCarrito", "CarritoController@store")->middleware("auth");
-// Route::post("/guardarReceta", "")->middleware("auth";
+Route::get("/perfil", "CarritoController@historial")->middleware("auth");
 
 Route::get("/carrito", "CarritoController@index")->middleware("auth");
 Route::post("/compraFinal", "CarritoController@cierreCompra");
 Route::post("/borrarProducto", "CarritoController@delete");
 
-Route::get("/perfil", "CarritoController@historial")->middleware("auth");
-
+// ACA SE CREAN NUEVOS PRODUCTOS Y RECETAS
 Route::get("/nuevoProducto", "ProductoController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevoProducto", "ProductoController@store");
 Route::get("/nuevaReceta", "RecetaController@create")->middleware("auth")->middleware('roles');
 Route::post("/nuevaReceta", "RecetaController@store");
 
+// ACA SE EDITAN LOS PRODUCTOS Y RECETAS
 Route::get("/editarProducto/{id}", "ProductoController@edit")->middleware("auth")->middleware('roles');
 Route::post("/editarProducto/{id}", "ProductoController@update");
 Route::get("/editarReceta/{id}", "RecetaController@edit")->middleware("auth")->middleware('roles');
