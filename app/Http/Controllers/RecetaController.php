@@ -62,7 +62,7 @@ class RecetaController extends Controller
 
       $receta->save();
 
-      return redirect('/');
+      return redirect('/lacocina');
 
     }
 

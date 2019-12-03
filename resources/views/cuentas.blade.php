@@ -4,11 +4,11 @@
     <section class="formularios">
       <div class="login">
         <h1>Iniciar sesión</h1>
-        
+
         <div class="cuadrado1">
           <div class="cuadrado2">
             <form class="log" action="/login" method="post">
-            @csrf
+              @csrf
               <div class="form-group">
                 <label for="email">Dirección de email</label>
               </div>

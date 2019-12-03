@@ -23,7 +23,7 @@
               <form class="" action="/borrarProducto" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{$compra->id}}">
-                <button type="submit" name="button">Eliminar</button>
+                <button class="carritoMenos1" type="submit" name="button">Eliminar</button>
               </form>
             </td>
             <td>{{$compra->price}}</td>

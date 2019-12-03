@@ -67,7 +67,7 @@ class ProductoController extends Controller
     $producto->ingredientes = $req['ingredientes'];
     $producto->imagen = $nombreImg;
     $producto->save();
-    return redirect('/');
+    return redirect('/lacocina');
     }
 
     /**

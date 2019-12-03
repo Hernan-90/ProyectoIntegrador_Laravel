@@ -562,20 +562,43 @@ form small {
   form small {
     color: red;
   }
-  /*.login strong {
-    font-family: 'Lato', sans-serif;
-    color: #97F8A0;
-    -webkit-text-stroke: 0.5px black;
-  }
-  .register strong {
-    font-family: 'Lato', sans-serif;
-    color: #F8EE97;
-  }
-    /* -webkit-text-stroke: 1px black; */
-
-  .productos_destacados, .containercarrito, .historial, .Recetas {
+  .containercarrito, .historial{
     top: 120px;
     position: relative;
+  }
+  .productos_destacados, .categorias{
+    top: 120px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .productos{
+    top: 120px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #F8EE97;
+  }
+  .recetas{
+    top: 120px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #97F8A0;
+  }
+  .productos_container, .recetas_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    text-align: center;
+  }
+  .productos_box, .recetas_box{
+    width: 300px;
   }
 }
 

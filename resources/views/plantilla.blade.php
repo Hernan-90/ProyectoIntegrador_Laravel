@@ -1,12 +1,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="widht=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/stylesheet.css">
-
 </head>
   <body>
     <header class="">
@@ -63,7 +62,7 @@
                     </form>
                   @elseif (Auth::user()->rol == 0)
                     <a href="/perfil">PERFIL</a>
-                    <a href="/carrito">CARRITO ()</a>
+                    <a href="/carrito">CARRITO</a>
                     <a href="/cuentas" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                                   {{ __('LOGOUT') }}
