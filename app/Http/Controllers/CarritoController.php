@@ -49,7 +49,6 @@ class CarritoController extends Controller
       $compra->user_id = Auth::user()->id;
       $compra->estadoCompra = 0;
 
-
       $compra->save();
 
       return redirect("/lacocina");
