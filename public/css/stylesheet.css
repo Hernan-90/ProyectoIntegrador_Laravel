@@ -125,7 +125,11 @@ header {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+.cuerpo_nosotros {
+  text-align: center;
+  position: relative;
+  top:120px;
+}
 
 
 /* ACA VA EL FOOTER */
