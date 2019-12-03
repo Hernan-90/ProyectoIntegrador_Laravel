@@ -49,11 +49,14 @@ header {
 .hamburger{
   display: block;
 }
+.icono{
+  font-size: 30px;
+}
 .menu {
-  order: 3;
+  order: 1;
 }
 .logo{
-  order: 1;
+  order: 3;
 }
 .menu_cuentas{
   order: 2;
@@ -61,6 +64,63 @@ header {
 .cuentas{
   display: none;
 }
+/*navbar*/
+/* Navbar container */
+.fa {
+  color: black;
+  font-size: 30px;
+}
+.navbar {
+  overflow: hidden;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+}
+
+/* The dropdown container */
+.dropdown {
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #97F8A0;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+}
+
+/* Show the dropdown menu on hover*/
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
 /* ACA VA EL FOOTER */
 footer {
   background-color: lightgrey;
@@ -247,12 +307,14 @@ top: 120px;
   border-radius: 10px;
 }
 
+/* ACA VA LA SECCION NOSOTROS */
+
+
 @media (min-device-width: 768px) {
   /* ACA VA EL HEADER */
 .cuentas{
   display: block;
 }
-
   /* ACA VA EL FOOTER */
 footer{
   top:120px;

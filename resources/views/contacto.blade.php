@@ -1,9 +1,15 @@
 @extends('plantilla')
 
 @section('cuerpo')
-  <div class="cuerpo">
+  <div class="cuerpo nosotros">
+    <body>
+      <div class="cuadrado5">
+
     <h1>Sobre Nosotros</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>
+
+      Les enseño las recetas que más me gustan, para que preparen a su familia y amigos para que puedan agasajarlos compartiendo buenos momentos juntos comiendo algo rico y casero!
+    </p>
     <section>
       <a href="#">telefono</a>
       <ul>
@@ -18,8 +24,11 @@
         </li>
       </ul>
     </section>
+
+  </div>
     <aside class="">
 
     </aside>
+  </body>
   </div>
 @endsection

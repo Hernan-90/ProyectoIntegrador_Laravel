@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Baskerville&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/stylesheet.css">
+
 </head>
   <body>
     <header class="">
@@ -25,7 +26,19 @@
               @endauth
             </li>
             <li class="hamburger">
-              <a href="#"><i class="fas fa-bars"></i></a>
+              <div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/">HOME</a>
+      <a href="/lacocina">LA COCINA</a>
+      <a href="/contacto">NOSOTROS</a>
+      <a href="/cuentas">LOGIN/REGISTRO</a>
+    </div>
+  </div>
+</div>
             </li>
           </ul>
         </div>
