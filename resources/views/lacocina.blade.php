@@ -63,10 +63,10 @@
               <div class="">
                 {{$producto->nombreproducto}}
               </div>
-              <img src="/storage/productos/{{$producto->imagen}}" alt="">
+              <img class="img_product" src="/storage/productos/{{$producto->imagen}}" alt="">
               <div class="">
                 <p>${{$producto->precio1}}</p>
-                <p>${{$producto->precio2}}</p>
+                  {{--<p>${{$producto->precio2}}</p>--}}
               </div>
               <div class="">
                 {{$producto->descripcion}}
@@ -81,6 +81,7 @@
               @auth
                 @if (Auth::user()->rol == 1)
                   <a href="/editarProducto/{{$producto->id}}">Editar</a>
+                  <a href="/borrarProducto/{{$producto->id}}">Eliminar</a>
                 @endif
               @endauth
             </div>
@@ -99,7 +100,7 @@
               <div class="">
                 {{$receta->titulo}}
               </div>
-              <img src="/storage/recetas/{{$receta->foto_producto}}" alt="">
+              <img class="img_receta" src="/storage/recetas/{{$receta->foto_producto}}" alt="">
               <div class="">
                 {{$receta->ingredientes}}
               </div>
@@ -112,13 +113,20 @@
               <form class="" action="/guardarReceta" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{$receta->id}}">
-                <button type="submit">
+                <button class="guarda_Receta" type="submit">
                   Guardar RECETA
                 </button>
               </form>
               @auth
                 @if (Auth::user()->rol == 1)
-                  <a href="/editarReceta/{{$receta->id}}">Editar</a>
+                  <ul>
+                    <li>
+                    <a href="/editarReceta/{{$receta->id}}">Editar</a>
+                   </li>
+                    <li>
+                    <a href="/borrarReceta/{{$receta->id}}">Eliminar</a>
+                    </li>
+                  </ul>
                 @endif
               @endauth
             </div>

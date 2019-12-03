@@ -48,3 +48,7 @@ Route::get("/editarProducto/{id}", "ProductoController@edit")->middleware("auth"
 Route::post("/editarProducto/{id}", "ProductoController@update");
 Route::get("/editarReceta/{id}", "RecetaController@edit")->middleware("auth")->middleware('roles');
 Route::post("/editarReceta/{id}", "RecetaController@update");
+
+// ACA SE ELIMINAN LOS PRODUCTOS Y RECETAS
+Route::get("/borrarProducto/{id}", "ProductoController@delete")->middleware("auth")->middleware('roles');
+Route::get("/borrarReceta/{id}", "RecetaController@delete")->middleware("auth")->middleware('roles');

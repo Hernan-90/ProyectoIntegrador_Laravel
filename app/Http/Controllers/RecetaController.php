@@ -134,4 +134,10 @@ class RecetaController extends Controller
     {
         //
     }
+
+    public function delete(Request $req){
+      $recetaBorrada = Receta::find($req->id);
+      $recetaBorrada->delete();
+      return redirect("/lacocina");
+    }
 }

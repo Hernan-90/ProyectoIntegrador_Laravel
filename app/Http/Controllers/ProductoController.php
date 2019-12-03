@@ -148,4 +148,10 @@ class ProductoController extends Controller
     {
         //
     }
+
+    public function delete(Request $req){
+      $productoBorrado = Producto::find($req->id);
+      $productoBorrado->delete();
+      return redirect("/lacocina");
+    }
 }

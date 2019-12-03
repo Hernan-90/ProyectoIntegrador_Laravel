@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
       factory(\App\Producto::class,10)->create();
       factory(\App\Receta::class,5)->create();
-    }
+
 
     DB::table("users")->insert(
       [
@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         "password" => bcrypt("admin123"),
         "rol" => 1,
       ]
-    );
+  );
+}
 }

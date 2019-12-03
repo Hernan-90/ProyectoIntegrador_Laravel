@@ -22,10 +22,10 @@
       <small class="">{{ $message }}</small>
   @enderror
 </div>
-<div class="">
+{{--}}<div class="">
   <label for="">Precio 2</label>
   <input type="number" name="precio2" value="">
-</div>
+</div>--}}
 <div class="">
   @error('precio2')
       <small class="">{{ $message }}</small>
